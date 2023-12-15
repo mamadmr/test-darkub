@@ -18,9 +18,6 @@ RUN apt-get -y install python3-flask
 ADD . .
 
 
-# initialize the nginx server
-RUN nginx -c /etc/nginx/nginx.conf
-
 # copy the nginx configuration file to the nginx server
 COPY nginx.conf /etc/nginx/nginx.conf
 
