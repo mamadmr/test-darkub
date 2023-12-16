@@ -1,15 +1,14 @@
-# this docker file is aimed to make a proxy server that use nginx to proxy the request to the backend server
-
-# use the nginx image as the base image
+# Use the nginx image as the base image
 FROM nginx
 
-# make app directory
+# Set the working directory
 WORKDIR /server
 
-
-# copy the nginx configuration file to the nginx server
-
+# Copy the nginx configuration file to the nginx server
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# start the nginx server
+# Expose the port that nginx will listen on
+EXPOSE 7777
+
+# Start the nginx server
 CMD ["nginx", "-g", "daemon off;"]
