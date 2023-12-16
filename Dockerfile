@@ -6,20 +6,10 @@ FROM nginx
 # make app directory
 WORKDIR /server
 
-# install the dependencies
-# install pip 
-RUN apt-get update
-RUN apt-get -y install python3-pip
-
-
-# install flask 
-RUN apt-get -y install python3-flask
-
-ADD . .
-
 
 # copy the nginx configuration file to the nginx server
+
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # start the nginx server
-CMD ["python3", "server.py"]
+CMD ["nginx", "-g", "daemon off;"]
