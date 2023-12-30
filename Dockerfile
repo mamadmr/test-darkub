@@ -6,6 +6,8 @@ WORKDIR /server
 
 # Copy the nginx configuration file to the nginx server
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 
 # Expose the port that nginx will listen on
 EXPOSE 80
