@@ -8,7 +8,7 @@ WORKDIR /server
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose the port that nginx will listen on
-EXPOSE 7777
+EXPOSE 80
 
 # Start the nginx server
 CMD ["nginx", "-g", "daemon off;"]
