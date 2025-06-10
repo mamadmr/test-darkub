@@ -5,8 +5,11 @@ FROM nginx:latest
 WORKDIR /server
 
 # Copy the nginx configuration file to the nginx server
-COPY nginx.conf     /etc/nginx/nginx.conf
 COPY default.conf   /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+EXPOSE 443
+EXPOSE 8080
 
 
 # Start the nginx server
